@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DynamicPathScript : MonoBehaviour
+public class DynamicPath : MonoBehaviour
 {
     [SerializeField] GameObject targetObject;
 
