@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class Wander : MonoBehaviour
+public class FollowTarget : MonoBehaviour
 {
     NavMeshAgent agent;
     Vector2 targetPoint;
