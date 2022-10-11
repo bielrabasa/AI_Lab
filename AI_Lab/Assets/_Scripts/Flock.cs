@@ -8,12 +8,6 @@ public class Flock : MonoBehaviour
     public Vector3 direction;
     float speed = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +20,15 @@ public class Flock : MonoBehaviour
 
     public void CalculateDirection()
     {
-        direction = (Cohesion() + Align() + Separation()).normalized * speed;
+        direction = Vector3.zero;
+
+        if (myManager.followLiderForce > 0f) direction += FollowLeader() * myManager.followLiderForce;
+        if (myManager.cohesionForce > 0f) direction += Cohesion() * myManager.cohesionForce;
+        if (myManager.alignForce > 0f) direction += Align() * myManager.alignForce;
+        if (myManager.separationForce > 0f) direction += Separation() * myManager.separationForce;
+
+        direction.Normalize();
+        direction *= speed;
     }
 
     Vector3 Cohesion()
@@ -47,10 +49,23 @@ public class Flock : MonoBehaviour
                 }
             }
         }
+        
+        //Normal ocasion
         if (num > 0)
-            cohesion = (cohesion / num - transform.position).normalized;
+        {
+            return (cohesion / num - transform.position).normalized;
+        }
 
-        return cohesion;
+        //Alone fella
+        foreach (GameObject go in myManager.allFish)
+        {
+            if (go != this.gameObject)
+            {
+                cohesion += go.transform.position;
+                num++;
+            }
+        }
+        return (cohesion / num - transform.position).normalized;
     }
 
     Vector3 Align()
@@ -95,5 +110,10 @@ public class Flock : MonoBehaviour
         }
 
         return separation;
+    }
+
+    Vector3 FollowLeader()
+    {
+        return (myManager.lider.transform.position - transform.position).normalized;
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -453,16 +453,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 5357125698123493115, guid: 6d92ca1e18a6b83439c5f05bdd06eb8b, type: 3}
   allFish: []
-  numFish: 50
+  numFish: 100
   swimLimits: {x: 20, y: 20, z: 20}
   bounded: 0
-  randomise: 0
-  followLider: 0
   lider: {fileID: 853919735}
   minSpeed: 3
-  maxSpeed: 5
-  neighbourDistance: 6
+  maxSpeed: 3.5
+  neighbourDistance: 4
   rotationSpeed: 0.5
+  followLiderForce: 1
+  cohesionForce: 1
+  alignForce: 1
+  separationForce: 1.5
+  calculationFreq: 0.1
 --- !u!1 &853919735
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853919735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -101.45, y: 20.92, z: -88.399994}
+  m_LocalPosition: {x: -101.45, y: 20.92, z: -46.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

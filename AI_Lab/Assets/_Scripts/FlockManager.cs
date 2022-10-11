@@ -12,8 +12,7 @@ public class FlockManager : MonoBehaviour
     //Flock settings
     public Vector3 swimLimits = new Vector3(20, 20, 20);
     public bool bounded = false;
-    public bool randomise = false;
-    public bool followLider = false;
+    
     public GameObject lider;
 
     //Fish settings
@@ -28,6 +27,16 @@ public class FlockManager : MonoBehaviour
     [Range(0.0f, 5.0f)]
     public float rotationSpeed = 1;
 
+    //AI
+    [Header("\nAI Settings")]
+    [Range(0.0f, 3.0f)]
+    public float followLiderForce = 1.0f;
+    [Range(0.0f, 3.0f)]
+    public float cohesionForce = 1.0f;
+    [Range(0.0f, 3.0f)]
+    public float alignForce = 1.0f;
+    [Range(0.0f, 3.0f)]
+    public float separationForce = 1.0f;
 
     //Freq
     float freq = 0.0f;
@@ -35,7 +44,7 @@ public class FlockManager : MonoBehaviour
     [Header("\n")]
     public float calculationFreq = 0.3f;
 
-    int d = 10; //Generation distance
+    int d = 5; //Generation distance
 
     // Start is called before the first frame update
     void Start()
@@ -47,9 +56,10 @@ public class FlockManager : MonoBehaviour
             Vector3 pos = this.transform.position + 
                 new Vector3(Random.Range(-d, d), Random.Range(-d, d), Random.Range(-d, d)); // random position
 
-            Vector3 randomize = new Vector3(Random.Range(-d, d), Random.Range(-d, d), Random.Range(-d, d)); // random vector direction
+            Vector3 initDir = new Vector3(Random.Range(0.5f, 1.0f), Random.Range(0.5f, 1.0f), Random.Range(0.5f, 1.0f));
+            
             allFish[i] = (GameObject)Instantiate(fishPrefab, pos,
-                                Quaternion.LookRotation(randomize));
+                                Quaternion.LookRotation(initDir));
 
             allFish[i].GetComponent<Flock>().myManager = this;
         }
@@ -60,7 +70,6 @@ public class FlockManager : MonoBehaviour
         freq += Time.deltaTime;
         if(freq > calculationFreq)
         {
-            Debug.Log("Calculating...");
             freq = 0.0f;
             foreach (GameObject go in allFish)
             {
