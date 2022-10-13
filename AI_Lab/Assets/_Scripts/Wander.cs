@@ -7,8 +7,6 @@ public class Wander : MonoBehaviour
     NavMeshAgent agent;
     Vector2 targetPoint;
 
-    public GameObject target;
-
     [SerializeField] float changingTargetTime;
     [SerializeField] float changingTargetDist = 100.0f;
     [SerializeField] float radius = 20.0f;
@@ -48,8 +46,5 @@ public class Wander : MonoBehaviour
         Vector3 dirPos = new Vector3(targetPoint.x, 0, targetPoint.y);
         
         agent.destination = dirPos;
-
-        //Change target
-        target.transform.position = dirPos;
     }
 }

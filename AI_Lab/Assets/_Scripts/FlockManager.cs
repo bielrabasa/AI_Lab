@@ -39,12 +39,12 @@ public class FlockManager : MonoBehaviour
     public float separationForce = 1.0f;
 
     //Freq
-    float freq = 0.0f;
+    float freq = 1.0f;
     [Range(0.0f, 2.0f)]
     [Header("\n")]
     public float calculationFreq = 0.3f;
 
-    int d = 5; //Generation distance
+    int d = 3; //Generation distance
 
     // Start is called before the first frame update
     void Start()
@@ -56,10 +56,10 @@ public class FlockManager : MonoBehaviour
             Vector3 pos = this.transform.position + 
                 new Vector3(Random.Range(-d, d), Random.Range(-d, d), Random.Range(-d, d)); // random position
 
-            Vector3 initDir = new Vector3(Random.Range(0.5f, 1.0f), Random.Range(0.5f, 1.0f), Random.Range(0.5f, 1.0f));
+            Vector3 initDir = new Vector3(-Random.Range(0.5f, 1.0f), -Random.Range(0.5f, 1.0f), -Random.Range(0.5f, 1.0f));
             
-            allFish[i] = (GameObject)Instantiate(fishPrefab, pos,
-                                Quaternion.LookRotation(initDir));
+            //Create elements inside this object (keep hierarchy clean)
+            allFish[i] = (GameObject)Instantiate(fishPrefab, pos, Quaternion.LookRotation(initDir), transform);
 
             allFish[i].GetComponent<Flock>().myManager = this;
         }
