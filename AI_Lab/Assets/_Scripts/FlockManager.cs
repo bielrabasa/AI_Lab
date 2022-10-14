@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class FlockManager : MonoBehaviour
 {
-    [SerializeField] GameObject fishPrefab;
+    [SerializeField] GameObject beePrefab;
     
-    public GameObject[] allFish;
-    [SerializeField] int numFish = 50;
-
-    //Flock settings
-    public Vector3 swimLimits = new Vector3(20, 20, 20);
-    public bool bounded = false;
+    public GameObject[] allBees;
+    [SerializeField] int numBees = 50;
     
-    public GameObject lider;
+    [SerializeField] GameObject lider;
+    [HideInInspector] public Vector3 liderPos;
+    float targetChangeTime = 30.0f;
+    float changeTarget = 0.0f;
 
     //Fish settings
     [Header("\nFish Settings")]
@@ -49,8 +48,10 @@ public class FlockManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allFish = new GameObject[numFish];
-        for (int i = 0; i < numFish; ++i)
+        liderPos = lider.transform.position;
+        
+        allBees = new GameObject[numBees];
+        for (int i = 0; i < numBees; ++i)
         {
 
             Vector3 pos = this.transform.position + 
@@ -59,22 +60,34 @@ public class FlockManager : MonoBehaviour
             Vector3 initDir = new Vector3(-Random.Range(0.5f, 1.0f), -Random.Range(0.5f, 1.0f), -Random.Range(0.5f, 1.0f));
             
             //Create elements inside this object (keep hierarchy clean)
-            allFish[i] = (GameObject)Instantiate(fishPrefab, pos, Quaternion.LookRotation(initDir), transform);
+            allBees[i] = (GameObject)Instantiate(beePrefab, pos, Quaternion.LookRotation(initDir), transform);
 
-            allFish[i].GetComponent<Flock>().myManager = this;
+            allBees[i].GetComponent<Flock>().myManager = this;
         }
     }
 
     private void Update()
     {
         freq += Time.deltaTime;
+        changeTarget += Time.deltaTime;
+
+        //Calculate direction only every "calculationFreq" seconds
         if(freq > calculationFreq)
         {
             freq = 0.0f;
-            foreach (GameObject go in allFish)
+            foreach (GameObject go in allBees)
             {
                 go.GetComponent<Flock>().CalculateDirection();
             }
+        }
+
+        //Change target between 2 hives
+        if(changeTarget > targetChangeTime)
+        {
+            changeTarget = 0.0f;
+
+            if (liderPos != transform.position) liderPos = transform.position;
+            else liderPos = lider.transform.position;
         }
     }
 }

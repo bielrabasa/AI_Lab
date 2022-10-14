@@ -10,6 +10,8 @@ public class Wander : MonoBehaviour
     [SerializeField] float changingTargetTime;
     [SerializeField] float changingTargetDist = 100.0f;
     [SerializeField] float radius = 20.0f;
+
+    [SerializeField] float maxDistance = 70.0f;
     float targetFreq = 0.0f;
 
     private void Start()
@@ -36,10 +38,11 @@ public class Wander : MonoBehaviour
 
         targetPoint += new Vector2(transform.forward.x, transform.forward.z)  * changingTargetDist;
 
-        if (targetPoint.x > 100 || targetPoint.y > 100 || targetPoint.x < -100 || targetPoint.y < -100)
+        if (targetPoint.x > maxDistance || targetPoint.y > maxDistance ||
+            targetPoint.x < -maxDistance || targetPoint.y < -maxDistance)
         {
-            targetPoint.x = Random.Range(-100, 100);
-            targetPoint.y = Random.Range(-100, 100);
+            targetPoint.x = Random.Range(-maxDistance, maxDistance);
+            targetPoint.y = Random.Range(-maxDistance, maxDistance);
         }
 
         
