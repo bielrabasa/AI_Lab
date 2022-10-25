@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -738,8 +738,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1910921155}
-  - component: {fileID: 1910921158}
   - component: {fileID: 1910921157}
+  - component: {fileID: 1910921159}
+  - component: {fileID: 1910921160}
   m_Layer: 0
   m_Name: OLD_MAN
   m_TagString: Untagged
@@ -785,7 +786,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1910921158
+--- !u!95 &1910921159
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910921154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d57ee846f2f49254c8430308adcb68e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1910921160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -794,10 +815,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1910921154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe05c762e4e99140ab07af250505113, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d643311eb2ab0a4b97b18d811ad4001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changingTargetTime: 8
-  changingTargetDist: 7
-  radius: 5
-  maxDistance: 50
+  boundDistance: 50
+  WanderMoveDist: 7
+  WanderRadius: 5

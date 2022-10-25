@@ -6,11 +6,16 @@ using UnityEngine.AI;
 public class Movement : MonoBehaviour
 {
     NavMeshAgent agent;
-    public float boundDistance = 70.0f;
+    public float boundDistance = 50.0f;
 
     //Wander
-    public float WanderMoveDist = 0f;
-    public float WanderRadius = 0f;
+    public float WanderMoveDist = 7f;
+    public float WanderRadius = 5f;
+
+    private void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
 
     public void Seek(Vector3 pos)
     {
