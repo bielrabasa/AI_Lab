@@ -28,6 +28,10 @@ public class WanderState : StateMachineBehaviour
         {
             movement.Wander();
             t = 0.0f;
+            if (Random.Range(0, 4) == 0)
+            {
+                animator.SetTrigger("goBench");
+            }
         }
     }
 
