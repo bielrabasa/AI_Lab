@@ -30,9 +30,8 @@ public class GoBenchState : StateMachineBehaviour
         Vector3 dist = (animator.gameObject.transform.position - currentBench);
         if ( dist.sqrMagnitude < 6)
         {
-            animator.SetTrigger("sit");
+            animator.SetInteger("state", 2);
         }
-        //Debug.Log(dist.sqrMagnitude);
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

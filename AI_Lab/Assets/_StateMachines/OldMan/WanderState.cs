@@ -11,6 +11,7 @@ public class WanderState : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //animator.ResetTrigger("wander");
         movement = animator.GetComponent<Movement>();
         
         t = 0.0f;
@@ -27,7 +28,7 @@ public class WanderState : StateMachineBehaviour
             t = 0.0f;
             if (Random.Range(0, 1) == 0)
             {
-                animator.SetTrigger("goBench");
+                animator.SetInteger("state", 1);
             }
             else
             {
