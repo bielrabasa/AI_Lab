@@ -19,7 +19,8 @@ public class Movement : MonoBehaviour
 
     public void Seek(Vector3 pos)
     {
-        agent.destination = pos;
+        agent.SetDestination(pos);
+        //agent.destination = pos;
     }
 
     public void Wander()

@@ -7,12 +7,6 @@ public class GoBenchState : StateMachineBehaviour
     Movement movement;
 
     Vector3 currentBench;
-    Vector3[] benchLocations = { 
-        new Vector3(23, 0, -47), 
-        new Vector3(-16, 0, -47), 
-        new Vector3(-49, 0, -21), 
-        new Vector3(-49, 0, 23) 
-    };
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,7 +14,7 @@ public class GoBenchState : StateMachineBehaviour
         //animator.ResetTrigger("goBench");
         movement = animator.GetComponent<Movement>();
 
-        currentBench = benchLocations[Random.Range(0, 4)];
+        currentBench = BlackBoard.benchLocations[Random.Range(0, 4)];
         movement.Seek(currentBench);
     }
 

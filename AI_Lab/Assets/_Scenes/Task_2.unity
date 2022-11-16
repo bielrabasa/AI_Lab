@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6218,6 +6218,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1179815418}
   - component: {fileID: 1179815419}
+  - component: {fileID: 1179815420}
+  - component: {fileID: 1179815421}
   m_Layer: 0
   m_Name: ROBBER
   m_TagString: Untagged
@@ -6251,10 +6253,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 4
   m_Acceleration: 4
   avoidancePriority: 50
-  m_AngularSpeed: 80
+  m_AngularSpeed: 160
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -6263,6 +6265,87 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1179815420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179815417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422fb6956201c7944ae2113a1a53b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTasksPerTick: 500
+  behavior: {fileID: 11400000, guid: a6db9a704e2e251418713da667a0f51f, type: 2}
+  paused: 0
+  restartWhenFinished: 0
+  blackboard:
+    intParams: 
+    intParamsNames: []
+    intParamsLostDefaultValue: 
+    boolParams: 
+    boolParamsNames: []
+    boolParamsLostDefaultValue: 
+    floatParams: []
+    floatParamsNames: []
+    floatParamsLostDefaultValue: 
+    stringParams: []
+    stringParamsNames: []
+    stringParamsLostDefaultValue: 
+    colorParams: []
+    colorParamsNames: []
+    colorParamsLostDefaultValue: 
+    objectParams:
+    - {fileID: 1910921154}
+    objectParamsNames:
+    - target
+    objectParamsLostDefaultValue: 
+    layerMaskParams: []
+    layerMaskParamsNames: []
+    layerMaskParamsLostDefaultValue: 
+    enumParamsNames: []
+    enumParamsLostDefaultValue: 
+    vector2Params: []
+    vector2ParamsNames: []
+    vector2ParamsLostDefaultValue: 
+    vector3Params: []
+    vector3ParamsNames: []
+    vector3ParamsLostDefaultValue: 
+    vector4Params: []
+    vector4ParamsNames: []
+    vector4ParamsLostDefaultValue: 
+    rectParams: []
+    rectParamsNames: []
+    rectParamsLostDefaultValue: 
+    animationCurveParams: []
+    animationCurveParamsNames: []
+    animationCurveParamsLostDefaultValue: 
+    boundsParams: []
+    boundsParamsNames: []
+    boundsParamsLostDefaultValue: 
+    gradientParams: []
+    gradientParamsNames: []
+    gradientParamsLostDefaultValue: 
+    quaternionParams: []
+    quaternionParamsNames: []
+    quaternionParamsLostDefaultValue: 
+--- !u!114 &1179815421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179815417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d643311eb2ab0a4b97b18d811ad4001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundDistance: 50
+  WanderMoveDist: 7
+  WanderRadius: 5
 --- !u!1001 &1188371253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6751,6 +6834,10 @@ PrefabInstance:
     - target: {fileID: 138283898511822451, guid: 78f5652bbca95284eac6e110baa3de76, type: 3}
       propertyPath: m_Name
       value: Playground Platform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 138283898511822451, guid: 78f5652bbca95284eac6e110baa3de76, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 138283898511822451, guid: 78f5652bbca95284eac6e110baa3de76, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9006,6 +9093,7 @@ GameObject:
   - component: {fileID: 1910921157}
   - component: {fileID: 1910921159}
   - component: {fileID: 1910921160}
+  - component: {fileID: 1910921161}
   m_Layer: 0
   m_Name: OLD_MAN
   m_TagString: Untagged
@@ -9021,7 +9109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910921154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.42, y: 12.54, z: -12.41}
+  m_LocalPosition: {x: -7.9, y: 2.75, z: 29.1}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9086,6 +9174,18 @@ MonoBehaviour:
   boundDistance: 50
   WanderMoveDist: 7
   WanderRadius: 5
+--- !u!114 &1910921161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910921154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb1a96a918c74f4cb650cdfcd7036da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1919199492
 PrefabInstance:
   m_ObjectHideFlags: 0
