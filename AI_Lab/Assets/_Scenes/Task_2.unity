@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 99989784}
   - component: {fileID: 99989785}
   m_Layer: 0
-  m_Name: w
+  m_Name: Bench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1642,8 +1642,6 @@ Transform:
   m_Children:
   - {fileID: 1548634153}
   - {fileID: 654479739}
-  - {fileID: 2101747329}
-  - {fileID: 567188530}
   m_Father: {fileID: 889353705}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2905,13 +2903,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567188529}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.299, y: 0.0314, z: -0.123}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -29.9, y: 2.1399999, z: -12.3}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 288262868}
-  m_RootOrder: 3
+  m_Father: {fileID: 889353705}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &567188531
 BoxCollider:
@@ -5227,6 +5225,8 @@ Transform:
   - {fileID: 99989784}
   - {fileID: 1175843130}
   - {fileID: 1061307309}
+  - {fileID: 2101747329}
+  - {fileID: 567188530}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5731,7 +5731,7 @@ GameObject:
   - component: {fileID: 1061307309}
   - component: {fileID: 1061307310}
   m_Layer: 0
-  m_Name: w (2)
+  m_Name: Bench2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6335,7 +6335,7 @@ GameObject:
   - component: {fileID: 1175843130}
   - component: {fileID: 1175843131}
   m_Layer: 0
-  m_Name: w (1)
+  m_Name: Bench1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9969,13 +9969,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101747328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3367, y: 0.0314, z: -0.1512}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 33.67, y: 2.1399999, z: -15.12}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 288262868}
-  m_RootOrder: 2
+  m_Father: {fileID: 889353705}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2101747330
 CapsuleCollider:
