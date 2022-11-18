@@ -18,6 +18,7 @@ MonoBehaviour:
     id=\"0\" guid=\"a6db9a704e2e251418713da667a0f51f\" nextId=\"14\">\r\n      <root>\r\n       
     <RepeatUntilFailed id=\"13\" />\r\n      </root>\r\n      <inputParams>\r\n       
     <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"robber\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"False\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
     <outputParams />\r\n      <localParams />\r\n    </BehaviorTree>\r\n    <RepeatUntilFailed
     id=\"13\">\r\n      <child>\r\n        <PrioritySelectorNode id=\"2\" />\r\n     
@@ -33,8 +34,10 @@ MonoBehaviour:
     />\r\n      <localParams />\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode
     id=\"9\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"MyConditions/Is Cop Near?\">\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
-    <ActionNode id=\"8\" action=\"MyActions/Move Random (Wander)\">\r\n      <inputParams
-    />\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
+    <ActionNode id=\"8\" action=\"MyActions/Move Random (Wander)\">\r\n      <inputParams>\r\n       
+    <inputValues>\r\n          <entry name=\"me\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"True\" blackboard=\"robber\" />\r\n        </inputValues>\r\n     
+    </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
     <ConditionEvalNode id=\"11\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"AlwaysTrue\">\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
     <ActionNode id=\"10\" action=\"Navigation/MoveToGameObject\">\r\n      <inputParams>\r\n       
@@ -58,7 +61,7 @@ MonoBehaviour:
     the execution of its child node until it fails\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatUntilFailed id=\"13\" />\r\n       
     </data>\r\n      </_data>\r\n    </RepeatUntilFailed>\r\n    <PrioritySelectorNode
-    id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
+    id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
     position=\"309.4213 403.2465\" name=\"Priority Selector\" description=\"\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <PrioritySelectorNode
     id=\"2\" />\r\n          <RepeatUntilFailed id=\"13\" />\r\n        </data>\r\n     
@@ -68,7 +71,7 @@ MonoBehaviour:
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"9\" />\r\n          <PrioritySelectorNode id=\"2\" />\r\n        </data>\r\n     
     </_data>\r\n    </ConditionEvalNode>\r\n    <ActionNode id=\"8\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"117.8993 590.7458\" name=\"MyActions/Move
+    <data breakpoint=\"0\" selected=\"True\" position=\"117.8993 590.7458\" name=\"MyActions/Move
     Random (Wander)\" description=\"Wander\" cardinality=\"0\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"8\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"11\">\r\n      <_data>\r\n       
@@ -81,6 +84,6 @@ MonoBehaviour:
     the game object towards a given target by using a NavMeshAgent\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"10\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.5
+  zoom: 0.9
   subslist: []
   _guid: a6db9a704e2e251418713da667a0f51f

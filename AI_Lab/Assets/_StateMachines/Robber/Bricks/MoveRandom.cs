@@ -10,15 +10,15 @@ using UnityEngine.AI;
 public class MoveRandom : BasePrimitiveAction
 {
     float t = 5.0f;
-
-    GameObject Robber;
+    [InParam("me")]
+    GameObject me;
     Movement movement;
 
     public override void OnStart()
     {
-        Robber = GameObject.Find("ROBBER");
-        movement = Robber.GetComponent<Movement>();
-        Robber.GetComponent<NavMeshAgent>().isStopped = false;
+        movement = me.GetComponent<Movement>();
+        me.GetComponent<NavMeshAgent>().isStopped = false;
+        
     }
 
     public override TaskStatus OnUpdate()

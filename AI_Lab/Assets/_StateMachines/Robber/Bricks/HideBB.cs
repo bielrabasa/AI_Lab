@@ -25,6 +25,7 @@ public class HideBB : BasePrimitiveAction
 
     public override TaskStatus OnUpdate()
     {
+        targetGameobject.GetComponent<NavMeshAgent>().isStopped = false;
         moves.Hide();
         return TaskStatus.RUNNING;
     }

@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
 
     GameObject[] hidingSpots;
     public GameObject hideTarget;
+    public bool hiding = false;
 
     //Wander
     public float WanderMoveDist = 7f;
@@ -29,6 +30,7 @@ public class Movement : MonoBehaviour
 
     public void Wander()
     {
+        hiding = false;
         //Find radius
         Vector2 targetPoint = new Vector2(transform.position.x + Random.Range(-WanderRadius, WanderRadius),
                                 transform.position.z + Random.Range(-WanderRadius, WanderRadius));
@@ -76,5 +78,6 @@ public class Movement : MonoBehaviour
         hideCol.Raycast(backRay, out info, distance);
 
         Seek(info.point + chosenDir.normalized);
+        hiding = true;
     }
 }
