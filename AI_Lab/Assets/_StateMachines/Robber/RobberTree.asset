@@ -71,7 +71,7 @@ MonoBehaviour:
     />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams>\r\n       
     <outputValues>\r\n          <entry name=\"var\" type=\"System.Boolean\" isBlackboard=\"True\"
     blackboard=\"shout\" />\r\n        </outputValues>\r\n      </outputParams>\r\n     
-    <localParams />\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"44\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\"
+    <localParams />\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"44\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\"
     name=\"Basic/CheckBool\">\r\n      <inputParams>\r\n        <inputValues>\r\n         
     <entry name=\"valueA\" type=\"System.Boolean\" isBlackboard=\"True\" blackboard=\"shout\"
     />\r\n          <entry name=\"valueB\" type=\"System.Boolean\" isBlackboard=\"False\"
@@ -81,7 +81,7 @@ MonoBehaviour:
     <inputValues>\r\n          <entry name=\"me\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"me\" />\r\n        </inputValues>\r\n     
     </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
-    <ConditionEvalNode id=\"50\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"Basic/CheckBool\">\r\n     
+    <ConditionEvalNode id=\"50\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"Basic/CheckBool\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"valueA\" type=\"System.Boolean\"
     isBlackboard=\"True\" blackboard=\"shout\" />\r\n          <entry name=\"valueB\"
     type=\"System.Boolean\" isBlackboard=\"False\" value=\"True\" />\r\n        </inputValues>\r\n     
