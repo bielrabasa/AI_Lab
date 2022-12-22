@@ -8,6 +8,12 @@ public class ML_Santa : Agent
     Vector3 pos;
     float stoppedTimer;
 
+    Vector2[] targetCheckpoints = new[]
+    {
+        new Vector2(0, 0),
+        new Vector2(50, 50),
+    };
+
     public Transform Target;
 
     public override void OnEpisodeBegin()
@@ -20,11 +26,9 @@ public class ML_Santa : Agent
         //Set position
         pos = transform.position;
 
-        //      TODO: set checkpoints
         // Move the target to a new spot
-        Target.localPosition = new Vector3(Random.Range(-49.0f, 49.0f),
-                                           0.5f,
-                                           Random.Range(-49.0f, 49.0f));
+        Vector2 newPos = targetCheckpoints[Random.Range(0, targetCheckpoints.Length)];
+        Target.localPosition = new Vector3(newPos.x, 1, newPos.y);
 
     }
 
