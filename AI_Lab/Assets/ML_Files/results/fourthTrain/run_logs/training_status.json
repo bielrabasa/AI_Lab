@@ -1,0 +1,29 @@
+{
+    "AntiColision": {
+        "checkpoints": [
+            {
+                "steps": 77183,
+                "file_path": "results\\fourthTrain\\AntiColision\\AntiColision-77183.onnx",
+                "reward": null,
+                "creation_time": 1671828270.5508554,
+                "auxillary_file_paths": [
+                    "results\\fourthTrain\\AntiColision\\AntiColision-77183.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 77183,
+            "file_path": "results\\fourthTrain\\AntiColision.onnx",
+            "reward": null,
+            "creation_time": 1671828270.5508554,
+            "auxillary_file_paths": [
+                "results\\fourthTrain\\AntiColision\\AntiColision-77183.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.10.2+cpu"
+    }
+}

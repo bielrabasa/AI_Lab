@@ -123,11 +123,15 @@ public class ML_Santa : Agent
 
     public override void OnEpisodeBegin()
     {
-        // If the Agent fell, zero its momentum
-        if (this.transform.localPosition.y < 0)
+        // If the Agent out of bounds, reset position
+        if (this.transform.localPosition.x > 50 ||
+            this.transform.localPosition.x < -50 ||
+            this.transform.localPosition.z > 50 ||
+            this.transform.localPosition.z < -50)
         {
-            this.transform.localPosition = new Vector3(0, 0.5f, 0);
+            this.transform.position = new Vector3(-20, 1, 0);
         }
+
         //Set position
         pos = transform.position;
 
@@ -150,7 +154,7 @@ public class ML_Santa : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         //Check if always on same position
-        if (pos == transform.position)
+        if (Vector2.Distance(pos, transform.position) < 20)
         {
             stoppedTimer += Time.deltaTime;
         }
@@ -194,9 +198,15 @@ public class ML_Santa : Agent
         }
 
         //Negative reward for stopping
-        if (stoppedTimer > 3.0f)
+        if (stoppedTimer > 10.0f)
         {
             SetReward(-0.05f);
+            //EndEpisode();
+        }
+
+        if (stoppedTimer > 300.0f)
+        {
+            EndEpisode();
         }
 
         // Reward for reaching target
@@ -205,6 +215,11 @@ public class ML_Santa : Agent
         {
             SetReward(1.0f);
             EndEpisode();
+        }
+
+        if (distanceToTarget < 5.0f)
+        {
+            SetReward(0.05f);
         }
 
         // Negative reward for -> Out of bounds
@@ -236,7 +251,15 @@ public class ML_Santa : Agent
         //If it touches anything (except floor), negative reward
         if (!collision.gameObject.CompareTag("IGNORE_COLLISION"))
         {
-            SetReward(-0.05f);
+            SetReward(-0.02f);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (!collision.gameObject.CompareTag("IGNORE_COLLISION"))
+        {
+            SetReward(-0.01f);
         }
     }
 }
