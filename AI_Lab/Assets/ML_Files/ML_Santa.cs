@@ -198,14 +198,17 @@ public class ML_Santa : Agent
         }
 
         //Negative reward for stopping
-        if (stoppedTimer > 10.0f)
+        if (stoppedTimer > 5.0f)
         {
-            SetReward(-0.05f);
+            SetReward(-0.01f);
             //EndEpisode();
         }
 
-        if (stoppedTimer > 300.0f)
+        if (stoppedTimer > 25.0f)
         {
+            SetReward(-1.0f);
+            this.transform.position = new Vector3(-20, 1, 0);
+            stoppedTimer = 0.0f;
             EndEpisode();
         }
 
@@ -219,7 +222,7 @@ public class ML_Santa : Agent
 
         if (distanceToTarget < 5.0f)
         {
-            SetReward(0.05f);
+            SetReward(0.01f);
         }
 
         // Negative reward for -> Out of bounds
@@ -251,7 +254,7 @@ public class ML_Santa : Agent
         //If it touches anything (except floor), negative reward
         if (!collision.gameObject.CompareTag("IGNORE_COLLISION"))
         {
-            SetReward(-0.02f);
+            SetReward(-0.005f);
         }
     }
 
@@ -259,7 +262,7 @@ public class ML_Santa : Agent
     {
         if (!collision.gameObject.CompareTag("IGNORE_COLLISION"))
         {
-            SetReward(-0.01f);
+            SetReward(-0.001f);
         }
     }
 }

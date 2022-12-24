@@ -1,0 +1,47 @@
+{
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.10.2+cpu"
+    },
+    "AntiColision": {
+        "checkpoints": [
+            {
+                "steps": 499999,
+                "file_path": "results\\sixthTrain\\AntiColision\\AntiColision-499999.onnx",
+                "reward": -1.0,
+                "creation_time": 1671897122.029757,
+                "auxillary_file_paths": [
+                    "results\\sixthTrain\\AntiColision\\AntiColision-499999.pt"
+                ]
+            },
+            {
+                "steps": 762158,
+                "file_path": "results\\sixthTrain\\AntiColision\\AntiColision-762158.onnx",
+                "reward": -1.0,
+                "creation_time": 1671900324.6417782,
+                "auxillary_file_paths": [
+                    "results\\sixthTrain\\AntiColision\\AntiColision-762158.pt"
+                ]
+            },
+            {
+                "steps": 764872,
+                "file_path": "results\\sixthTrain\\AntiColision\\AntiColision-764872.onnx",
+                "reward": -1.0,
+                "creation_time": 1671900481.1414034,
+                "auxillary_file_paths": [
+                    "results\\sixthTrain\\AntiColision\\AntiColision-764872.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 764872,
+            "file_path": "results\\sixthTrain\\AntiColision.onnx",
+            "reward": -1.0,
+            "creation_time": 1671900481.1414034,
+            "auxillary_file_paths": [
+                "results\\sixthTrain\\AntiColision\\AntiColision-764872.pt"
+            ]
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "AntiColision": {
+        "checkpoints": [
+            {
+                "steps": 196146,
+                "file_path": "results\\eigthTrain\\AntiColision\\AntiColision-196146.onnx",
+                "reward": null,
+                "creation_time": 1671905261.2070918,
+                "auxillary_file_paths": [
+                    "results\\eigthTrain\\AntiColision\\AntiColision-196146.pt"
+                ]
+            },
+            {
+                "steps": 499971,
+                "file_path": "results\\eigthTrain\\AntiColision\\AntiColision-499971.onnx",
+                "reward": -2.4199998676776886,
+                "creation_time": 1671914329.4894717,
+                "auxillary_file_paths": [
+                    "results\\eigthTrain\\AntiColision\\AntiColision-499971.pt"
+                ]
+            },
+            {
+                "steps": 999937,
+                "file_path": "results\\eigthTrain\\AntiColision\\AntiColision-999937.onnx",
+                "reward": null,
+                "creation_time": 1671918615.2693524,
+                "auxillary_file_paths": [
+                    "results\\eigthTrain\\AntiColision\\AntiColision-999937.pt"
+                ]
+            },
+            {
+                "steps": 1200058,
+                "file_path": "results\\eigthTrain\\AntiColision\\AntiColision-1200058.onnx",
+                "reward": null,
+                "creation_time": 1671920360.9225597,
+                "auxillary_file_paths": [
+                    "results\\eigthTrain\\AntiColision\\AntiColision-1200058.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1200058,
+            "file_path": "results\\eigthTrain\\AntiColision.onnx",
+            "reward": null,
+            "creation_time": 1671920360.9225597,
+            "auxillary_file_paths": [
+                "results\\eigthTrain\\AntiColision\\AntiColision-1200058.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.10.2+cpu"
+    }
+}
