@@ -71,7 +71,7 @@ MonoBehaviour:
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"9\" />\r\n          <PrioritySelectorNode id=\"2\" />\r\n        </data>\r\n     
     </_data>\r\n    </ConditionEvalNode>\r\n    <ActionNode id=\"8\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"True\" position=\"117.8993 590.7458\" name=\"MyActions/Move
+    <data breakpoint=\"0\" selected=\"False\" position=\"117.8993 590.7458\" name=\"MyActions/Move
     Random (Wander)\" description=\"Wander\" cardinality=\"0\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"8\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"11\">\r\n      <_data>\r\n       
@@ -84,6 +84,6 @@ MonoBehaviour:
     the game object towards a given target by using a NavMeshAgent\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"10\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.9
+  zoom: 0.8
   subslist: []
   _guid: a6db9a704e2e251418713da667a0f51f

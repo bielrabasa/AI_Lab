@@ -205,7 +205,7 @@ MonoBehaviour:
     name=\"AlwaysTrue\" description=\"Eval\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n 
     </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.5
+  zoom: 0.6
   subslist:
   - {fileID: 11400000, guid: a6db9a704e2e251418713da667a0f51f, type: 2}
   _guid: 5194d5b36d724654c80c92b1c9ae9ff6

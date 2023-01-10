@@ -32,7 +32,7 @@ MonoBehaviour:
     <child>\r\n              <ActionNode id=\"2\" />\r\n            </child>\r\n         
     </GuardAndNode>\r\n        </elem>\r\n      </children>\r\n      <inputParams
     />\r\n      <outputParams />\r\n      <localParams />\r\n    </PrioritySelectorNode>\r\n   
-    <ConditionEvalNode id=\"14\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"MyConditions/Is
+    <ConditionEvalNode id=\"14\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"MyConditions/Is
     robber hiding?\">\r\n      <inputParams>\r\n        <inputValues>\r\n         
     <entry name=\"robber\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
     blackboard=\"robber\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
